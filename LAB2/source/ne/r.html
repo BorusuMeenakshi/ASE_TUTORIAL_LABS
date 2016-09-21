@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Registration Page</title>
+		<style>
+			body
+			{
+				text-align:center;
+				margin-top:170px;
+				background-image:url("6.jpg");
+				background-size:90%;
+				background-repeat:no-repeat;
+			}
+			.center
+			{
+				margin-left:auto;
+				margin-right:auto;
+			}
+			.bustyle
+			{
+				margin-top:10px;
+				height:30px;
+				width:100px;
+				border-radius:5px;
+				border:none;
+				background-color:#d0d0d0;
+				cursor:pointer;
+			}
+			.bustyle:hover{background-color:#787878}
+		</style>
+		<script>
+		function validation()
+		{
+			form = document.forms["regform"];
+			var yname = form["username"].value;	//name validation
+			localStorage.setItem('xname', yname);
+		}
+		</script>
+	</head>
+
+	<body>
+		<form method="post" name="regform" onsubmit="return validation()">
+			<h1>Register Here</h1>
+			<table class="center">
+				<tr>
+					<td>Username:</td>
+					<td><input type="text" name="username"></td>
+				</tr>
+				
+				<tr>
+					<td>Email ID:</td>
+					<td><input type="text" name="mail"/></td>
+				</tr>
+				
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" name="password"></td>
+				</tr>
+				
+			</table>
+			<input type="submit" value="Submit"/>
+			<input type="reset" value="Reset"/>
+			</fieldset>
+		</form>
+		
+	</body>
+</html>

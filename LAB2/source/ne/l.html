@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login Page</title>
+		<style>
+			body
+			{
+				text-align:center;
+				margin-top:140px;
+				
+				background-size:90%;
+				background-repeat:no-repeat;
+			}
+			.center
+			{
+				margin-left:auto;
+				margin-right:auto;
+			}
+			.bustyle
+			{
+				margin-top:10px;
+				height:20px;
+				width:150px;
+				border-radius:5px;
+				border:none;
+				background-color:#d0d0d0;
+				cursor:pointer;
+			}
+			.bustyle:hover{background-color:#787878}
+		</style>
+<script>
+
+function myFunction() {
+	form = document.forms["loguser"];
+			var yname = form["dsername"].value;
+    var name= localStorage.getItem("xname");
+    var n = yname.localeCompare(name);
+    if(n==0)
+{
+ document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+</script>
+	</head>
+	<body>
+<div id="result"></div>
+
+		
+		<form method="post" name="loguser" onsubmit="myFunction()">
+		
+			<h1>Login</h1>
+<a href ="home.html">link</a>
+			<table class="center">
+				<tr>
+					<td>Username:</td>
+					<td><input type="text" name="dsername"/></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" name="password"/></td>
+				</tr>
+			</table>
+			<input type="submit" value="Submit"/>
+		</fieldset>
+		</form>
+		
+	</body>
+</html>

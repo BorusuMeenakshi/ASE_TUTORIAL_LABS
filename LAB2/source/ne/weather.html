@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>weather app</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.startlocation = "Saint louis,mo";
+    $scope.endlocation = "Kansas city,mo";
+$scope.wea = function () {
+jQuery(document).ready(function($) {
+  $.ajax({
+  url : "https://api.wunderground.com/api/36b799dc821d5836/geolookup/conditions/q/{{endlocation.split(',')[1]}}/{{endlocation.split(',')[0]}}%20Rapids.json",
+  dataType : "jsonp",
+  success : function(parsed_json) {
+  var location = parsed_json['location']['city'];
+  var temp_f = parsed_json['current_observation']['temp_f'];
+  document.write("Current temperature in " + location + " is: " + temp_f);
+  }
+  });
+});}
+}); </script></head>
+<body>
+
+
+<div ng-app="myApp" ng-controller="myCtrl">
+    startlocation: <input ng-model="startlocation">
+    endlocation: <input ng-model="endlocation">
+    
+
+</div>
+<div class="row">
+                <button id="btn" ng-click="wea()">
+
+                    get Weather
+                </button>
+</div>
+
+</body>
+</html>

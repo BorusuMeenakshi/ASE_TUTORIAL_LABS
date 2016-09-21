@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My first API</title>
+    <script type="text/javascript" src="keys.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <!--  <script type="text/javascript" src="jsonparse.js"></script> -->
+    <script src="https://npmcdn.com/axios/dist/axios.min.js"></script>
+    <style>
+        div {
+            color: #669900;
+            font-size: 150%;
+            font-family: "Berlin Sans FB";
+        }
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+        }
+        .button2:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+    </style>
+    <style>
+        #imgName {
+
+
+            width: 130px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('toolbar_find.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+
+        #imgName:focus {
+            width: 60%;
+        }
+        #imgurl {
+
+
+            width: 130px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('internet_link_02.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+
+        #imgurl:focus {
+            width: 60%;
+        }
+
+
+    </style>
+
+
+</head>
+<body     background="bg.jpg">
+
+
+<script>
+    function geturl()
+    {
+        var xmlhttp = new XMLHttpRequest();
+        var API_KEY = '3307381-12f37b22f5554edc5caf9f908';
+        var imgEntered = document.getElementById("imgName").value;
+        var url = "https://pixabay.com/api/?key="+API_KEY+"&q="+encodeURIComponent(imgEntered);
+//var url = "https://pixabay.com/api/?key=3307381-12f37b22f5554edc5caf9f908&q=mahatma+gandhi&image_type=photo&pretty=true";
+
+        xmlhttp.onreadystatechange=function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this.responseText);
+            }
+        }
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+        function myFunction(response) {
+            var obj = JSON.parse(response);
+//   var i;
+//obj = JSON.parse("respo");
+            document.getElementById("my_result").innerHTML = '<img src="'+obj.hits[1].webformatURL+'"/>';
+            document.getElementById("imgurl").value = obj.hits[1].webformatURL;
+
+        }
+        /*if(  document.getElementById("demo").innerHTML ="\0")
+         {
+         document.write("no results found");
+         }*/
+    }
+</script>
+
+
+<input type="text" id="imgName" placeholder="Search..."/>
+<button class="button button2" onclick="geturl()">Get Img Details!!</button>
+<button class="button button2" style="float: right;"><a href="index.html">LOGOUT</a></button>
+
+<div>
+    <input type="text" id="imgurl" placeholder="Get URL"/>
+    <button class="button button2" onclick="run(document.getElementById('imgurl').value)">Get tags!</button>
+
+</div>
+<div id="tags"></div>
+<div id="my_result" style="width:320px; height:240px;"></div>
+
+
+<!-- <div id="url"></div> -->
+
+</body>
+</html>

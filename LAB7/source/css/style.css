@@ -1,0 +1,13 @@
+.background.scroll-content {
+  background: url('../templates/im.jpg') no-repeat;
+  background-size: cover;
+}
+.home.scroll-content {
+  background: url('../templates/bg12.PNG') no-repeat;
+  background-size: cover;
+}
+.padding.scroll-content {
+  background: url('../templates/bg.jpg') no-repeat;
+  background-size: cover;
+}
+

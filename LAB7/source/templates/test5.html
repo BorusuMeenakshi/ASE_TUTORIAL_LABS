@@ -1,0 +1,30 @@
+<ion-nav-view style="background: url(../templates/bg12.PNG); background-size: cover ">
+  <ion-title>
+    <h1>Home</h1>
+  </ion-title>
+  <ion-content class="home" scroll="false">
+    <ion-card>
+      <ion-card-header>
+        <h4>Home page</h4>
+      </ion-card-header>
+      <ion-card-content>
+        <h1>mashup ionic</h1>
+      </ion-card-content>
+    </ion-card>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="search" ng-model="search">
+      </label>
+    </div>
+    <div class="list list-inset" ng-model="contents">
+      {{contents}}
+    </div>
+    <button class="button button-positive" ng-click="init()">
+      Get Results!!
+    </button>
+    <button class="button button-positive" ng-click="init2()">
+      Another search
+    </button>
+  </ion-content>
+</ion-nav-view>

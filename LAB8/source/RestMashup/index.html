@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Home Mashup Page</title>
+    
+    <style>
+		div#j
+		{
+			height: 1000%;
+		}
+	</style>
+    
+    
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+    
+  </head>
+
+  <body>
+  <script>
+
+	  // document.getElementsByid("hello")
+	  var xmlhttp = new XMLHttpRequest();
+	  var hehe="90";
+	  var lol=20;
+	  var url = "http://localhost:8080/RESTExample/restexample/savings/90/30";
+
+	  xmlhttp.onreadystatechange=function() {
+		  if (this.readyState == 4 && this.status == 200) {
+			  myFunction(this.responseText);
+		  }
+	  }
+	  xmlhttp.open("GET", url, true);
+	  xmlhttp.send();
+
+	  function myFunction(response) {
+		  var obj = JSON.parse(response);
+		  document.getElementById("x").innerHTML =obj.income;
+		  document.getElementById("y").innerHTML =obj.savings;
+	  }
+
+  </script>
+  <h1>Web Server Mashup page</h1>
+    <div class="wrapper">
+	<div class="container">
+		<h1>Welcome</h1>
+		
+		<form class="form">
+
+			<input type="text" placeholder="Income" id="i">
+			<input type="text" placeholder="Bills" id="b">
+			<input type="text" placeholder="Miscellaneous Expenses" id="m">
+			<button type="submit" id="login-button" onclick="redirect()">Get Analysis</button>
+			<div id="j">
+
+			</div>
+		</form>
+	</div>
+	
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+  <script>
+	  function redirect()
+	  {
+window.location.assign("test.html");
+	  }
+  </script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+        <script src="js/index.js"></script>
+
+
+    
+  </body>
+</html>

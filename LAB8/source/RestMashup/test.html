@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<title>test</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<body background="bg55.jpg">
+
+
+
+<div class="w3-container">
+
+
+<h1>Unrequired Expenses percentage share:</h1><br>
+    <input type="text" id="i"><br><br><br>
+    <div class="w3-progress-container">
+        <div id="myBar" class="w3-progressbar w3-green" style="width:0%">
+            <div id="demo" class="w3-center w3-text-white">0%</div>
+        </div>
+    </div>
+
+    <br>
+
+    <button class="w3-btn w3-dark-grey" onclick="move()">Click Me</button>
+</div>
+
+<script>
+    function move() {
+        var elem = document.getElementById("myBar");
+        var limit=document.getElementById("i").value;
+
+        var width = 0;
+        var id = setInterval(frame, 10);
+        function frame() {
+            if (width >= limit) {
+                clearInterval(id);
+            } else {
+                width++;
+                elem.style.width = width + '%';
+                document.getElementById("demo").innerHTML = width * 1  + '%';
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
+

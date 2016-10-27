@@ -14,3 +14,6 @@ Assignment-5: https://github.com/BorusuMeenakshi/ASE_TUTORIAL_LABS/wiki/Assignme
 Assignment-6: https://github.com/BorusuMeenakshi/ASE_TUTORIAL_LABS/wiki/Assignment-6
 
 Assignment-7: https://github.com/BorusuMeenakshi/ASE_TUTORIAL_LABS/wiki/Assignment-7
+
+Assignment-8: https://github.com/BorusuMeenakshi/ASE_TUTORIAL_LABS/wiki/Assignment-8
+
